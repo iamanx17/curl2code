@@ -21,3 +21,28 @@ export const faqSchema = (faqs: Faq[]) => ({
     acceptedAnswer: { "@type": "Answer", text: faq.a },
   })),
 });
+
+export const breadcrumbSchema = (tool: Tool) => ({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: SITE.url },
+    { "@type": "ListItem", position: 2, name: "Tools", item: `${SITE.url}/tools` },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: tool.name,
+      item: `${SITE.url}/tools/${tool.slug}`,
+    },
+  ],
+});
+
+/** Site-level identity, rendered once on the homepage. */
+export const websiteSchema = () => ({
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: SITE.name,
+  url: SITE.url,
+  description: SITE.description,
+  publisher: { "@type": "Organization", name: SITE.name, url: SITE.url },
+});

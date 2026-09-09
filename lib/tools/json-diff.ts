@@ -33,7 +33,7 @@ export const jsonDiff: Tool = {
   name: "JSON Diff",
   category: "JSON",
   summary: "Compare two JSON documents and see exactly which fields differ.",
-  title: "JSON Diff — Compare Two JSON Documents | curl2code",
+  title: "JSON Diff — Compare Two JSON Documents",
   description:
     "Paste two JSON documents and get a list of every difference between them: fields that were added, fields that were removed, and values that changed. Nested objects and arrays are compared all the way down, so you do not have to read both payloads line by line.",
   outputLabel: "Differences",

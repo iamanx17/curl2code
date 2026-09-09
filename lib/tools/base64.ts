@@ -6,7 +6,7 @@ export const base64Tool: Tool = {
   name: "Base64 Encoder / Decoder",
   category: "Auth",
   summary: "Convert text to Base64 and back again.",
-  title: "Base64 Encoder and Decoder — Free Online Tool | curl2code",
+  title: "Base64 Encoder and Decoder — Free Online Tool",
   description:
     "Base64 turns any text into a string of safe, plain characters so it can travel through systems that only handle text — HTTP headers, JSON fields, data URLs. Paste text to encode it, or paste Base64 to read it back. Use the URL-safe option when the result has to go into a URL or a JWT.",
   outputLabel: "Result",
@@ -78,7 +78,7 @@ export const urlEncoder: Tool = {
   name: "URL Encoder / Decoder",
   category: "Auth",
   summary: "Percent-encode text for a URL, or decode the %20s back into readable text.",
-  title: "URL Encoder and Decoder — Percent Encoding Tool | curl2code",
+  title: "URL Encoder and Decoder — Percent Encoding Tool",
   description:
     "URLs can only contain a limited set of characters, so spaces, ampersands and anything non-English have to be escaped as percent codes. Paste text to encode it for use in a URL or query string, or paste an encoded URL to read what it actually says.",
   outputLabel: "Result",
@@ -163,7 +163,7 @@ export const basicAuth: Tool = {
   name: "Basic Auth Generator",
   category: "Auth",
   summary: "Turn a username and password into an Authorization header — or read one back.",
-  title: "Basic Auth Header Generator and Decoder | curl2code",
+  title: "Basic Auth Header Generator and Decoder",
   description:
     "HTTP Basic authentication sends your username and password as a single Base64 string in the Authorization header. Enter a username and password to get the exact header to paste into a request, or paste an existing header to see which credentials it contains.",
   outputLabel: "Header",

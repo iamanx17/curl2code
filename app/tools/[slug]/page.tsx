@@ -5,7 +5,8 @@ import { CurlLanguages } from "@/components/CurlLanguages";
 import { ToolCard } from "@/components/ToolCard";
 import { ToolRunner } from "@/components/ToolRunner";
 import { TOOLS, getTool, relatedTools } from "@/lib/tools";
-import { faqSchema, softwareSchema } from "@/lib/seo";
+import { breadcrumbSchema, faqSchema, softwareSchema } from "@/lib/seo";
+import type { Tool, ToolResult } from "@/lib/tools/types";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -25,11 +26,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+/**
+ * Run the tool's example at build time so the output is part of the static
+ * HTML. Manual tools are skipped because running them sends a real request.
+ */
+async function exampleResult(tool: Tool): Promise<ToolResult | undefined> {
+  if (!tool.example || tool.manual) return undefined;
+
+  try {
+    return await tool.run({ ...tool.example });
+  } catch {
+    // a broken example must not take the whole page build down
+    return undefined;
+  }
+}
+
 export default async function ToolPage({ params }: Props) {
   const tool = getTool((await params).slug);
   if (!tool) notFound();
 
   const related = relatedTools(tool);
+  const initial = await exampleResult(tool);
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-8">
@@ -49,7 +66,7 @@ export default async function ToolPage({ params }: Props) {
 
       {tool.category === "cURL" && <CurlLanguages slug={tool.slug} />}
 
-      <ToolRunner slug={tool.slug} />
+      <ToolRunner slug={tool.slug} initial={initial} />
 
       {tool.docs?.length ? (
         <div className="prose mt-12 max-w-3xl">
@@ -88,6 +105,7 @@ export default async function ToolPage({ params }: Props) {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             softwareSchema(tool),
+            breadcrumbSchema(tool),
             ...(tool.faqs?.length ? [faqSchema(tool.faqs)] : []),
           ]),
         }}

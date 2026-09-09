@@ -52,7 +52,7 @@ export const jsonToPydantic: Tool = {
   name: "JSON → Pydantic",
   category: "JSON",
   summary: "Generate Pydantic models from a JSON sample for use in Python.",
-  title: "JSON to Pydantic Model Generator (v2) | curl2code",
+  title: "JSON to Pydantic Model Generator (v2)",
   description:
     "Paste a JSON response and get Pydantic v2 models that describe it. Nested objects become their own classes, optional fields default to None, and any key that is not a valid Python name gets an alias so the model still matches the original JSON.",
   outputLabel: "Pydantic models",

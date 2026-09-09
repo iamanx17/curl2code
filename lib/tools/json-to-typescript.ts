@@ -65,7 +65,7 @@ export const jsonToTypescript: Tool = {
   name: "JSON → TypeScript",
   category: "JSON",
   summary: "Turn a JSON response into ready-to-paste TypeScript interfaces.",
-  title: "JSON to TypeScript — Generate Interfaces From JSON | curl2code",
+  title: "JSON to TypeScript — Generate Interfaces From JSON",
   description:
     "Paste a real API response and get the TypeScript interfaces that describe it. Nested objects become their own named interfaces, arrays are typed from their contents, and a field that is missing from some items in an array is marked optional with a question mark.",
   outputLabel: "TypeScript",

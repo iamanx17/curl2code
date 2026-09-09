@@ -27,7 +27,7 @@ export const jsonValidator: Tool = {
   name: "JSON Validator",
   category: "JSON",
   summary: "Check whether your JSON is valid, and see the exact line where it breaks.",
-  title: "JSON Validator — Find the Error in Your JSON | curl2code",
+  title: "JSON Validator — Find the Error in Your JSON",
   description:
     "Paste JSON and find out whether it is valid. If it is not, you get the line and column of the problem plus the surrounding text, so you can see the missing comma or bracket instead of guessing. If it is valid, you get a quick summary of what the document contains.",
   outputLabel: "Result",

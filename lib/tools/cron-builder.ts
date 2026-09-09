@@ -474,7 +474,7 @@ export const cronBuilder: Tool = {
   name: "Cron Expression Builder",
   category: "Utilities",
   summary: "Write a cron schedule from a preset, or paste one and read it in plain English.",
-  title: "Cron Expression Generator and Explainer | curl2code",
+  title: "Cron Expression Generator and Explainer",
   description:
     'Cron schedules are five fields of numbers and asterisks, and it is very easy to write one that does not do what you meant. Paste an expression to get a plain-English description and its next five run times, or pick a preset and take the expression away. "0 0 * * *" simply means every day at midnight.',
   outputLabel: "Schedule",

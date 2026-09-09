@@ -29,7 +29,7 @@ export const jsonFormatter: Tool = {
   name: "JSON Formatter",
   category: "JSON",
   summary: "Paste messy JSON and get it back neatly indented, or squashed onto one line.",
-  title: "JSON Formatter and Beautifier — Free Online Tool | curl2code",
+  title: "JSON Formatter and Beautifier — Free Online Tool",
   description:
     "API responses usually arrive as one long unreadable line. Paste it here and get it back properly indented so you can actually read it, or minify it to make it as small as possible. You can also sort the keys alphabetically, which is the trick that makes two similar payloads easy to compare.",
   outputLabel: "Formatted JSON",

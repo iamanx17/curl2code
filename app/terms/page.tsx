@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | curl2code",
+  title: "Terms of Service",
   description:
     "The terms covering use of curl2code's free developer tools, including permitted use, warranty disclaimer and limitation of liability.",
   alternates: { canonical: "/terms" },

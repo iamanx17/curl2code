@@ -11,7 +11,7 @@ export const requestBuilder: Tool = {
   name: "HTTP Request Builder",
   category: "API",
   summary: "Fill in a method, URL, headers and body, and get a cURL command or code.",
-  title: "HTTP Request Builder — Build cURL or Code From Parts | curl2code",
+  title: "HTTP Request Builder — Build cURL or Code From Parts",
   description:
     "The reverse of the cURL converter: instead of pasting a command, you fill in the parts. Choose a method, type a URL, add headers one per line and paste a body, then take the result away as a cURL command or as JavaScript, Axios or Python code.",
   outputLabel: "Request",
@@ -109,7 +109,7 @@ export const headerParser: Tool = {
   name: "HTTP Header Parser",
   category: "API",
   summary: "Paste a wall of raw headers and get a readable table plus JSON.",
-  title: "HTTP Header Parser — Read Raw Headers as a Table | curl2code",
+  title: "HTTP Header Parser — Read Raw Headers as a Table",
   description:
     "Copy the header block from curl -i, your browser's network panel or a log, and paste it here. You get every header as a sorted table, the status line explained if there is one, and the whole thing as a JSON object you can paste into code or a test.",
   outputLabel: "Parsed headers",
@@ -189,7 +189,7 @@ export const urlParser: Tool = {
   name: "URL Parser",
   category: "API",
   summary: "Break a long URL into its parts and list every query parameter.",
-  title: "URL Parser — Split a URL Into Its Parts | curl2code",
+  title: "URL Parser — Split a URL Into Its Parts",
   description:
     "Paste a long URL and see it taken apart: scheme, host, port, path and fragment, plus a table of every query parameter with its value already decoded. Much faster than counting ampersands in a URL that runs off the edge of your screen.",
   outputLabel: "URL parts",
@@ -272,7 +272,7 @@ export const queryStringParser: Tool = {
   name: "Query String Parser",
   category: "API",
   summary: "Convert a query string into JSON, or JSON into a query string.",
-  title: "Query String Parser — Query String to JSON and Back | curl2code",
+  title: "Query String Parser — Query String to JSON and Back",
   description:
     "Turn everything after the question mark into a readable JSON object, with values decoded and repeated keys collected into arrays. Switch the direction to go the other way and build a properly encoded query string from a JSON object.",
   outputLabel: "Result",
@@ -350,7 +350,7 @@ export const responseFormatter: Tool = {
   name: "HTTP Response Formatter",
   category: "API",
   summary: "Paste a whole raw HTTP response and get the status, headers and body separated.",
-  title: "HTTP Response Formatter — Split and Format a Response | curl2code",
+  title: "HTTP Response Formatter — Split and Format a Response",
   description:
     "Paste everything curl -i printed. The status line is explained, the headers become a table, and a JSON body is pretty-printed automatically. It saves you separating the parts by hand when you are trying to work out why a request behaved unexpectedly.",
   outputLabel: "Formatted response",

@@ -30,7 +30,7 @@ export const uuidGenerator: Tool = {
   name: "UUID Generator",
   category: "Utilities",
   summary: "Generate random or time-ordered UUIDs, one or hundreds at a time.",
-  title: "UUID Generator — v4 and v7 UUIDs, Bulk | curl2code",
+  title: "UUID Generator — v4 and v7 UUIDs, Bulk",
   description:
     "A UUID is a 128-bit identifier you can create without asking a central server, which makes it useful for database keys, request IDs and file names. Choose v4 for pure randomness or v7 if you want ids that sort by the time they were created, then generate as many as you need.",
   outputLabel: "UUIDs",
@@ -102,7 +102,7 @@ export const regexTester: Tool = {
   name: "Regex Tester",
   category: "Utilities",
   summary: "Test a regular expression against sample text and see every match and group.",
-  title: "Regex Tester — Test JavaScript Regular Expressions | curl2code",
+  title: "Regex Tester — Test JavaScript Regular Expressions",
   description:
     "Write a pattern, paste some text, and see every match with its position and capture groups as you type. It uses your browser's own regex engine, so the results are exactly what your JavaScript will do. Named groups are shown by name, and you can preview a replacement.",
   outputLabel: "Matches",
@@ -288,7 +288,7 @@ export const timestampConverter: Tool = {
   name: "Unix Timestamp Converter",
   category: "Utilities",
   summary: "Convert a Unix timestamp into a readable date, or a date into a timestamp.",
-  title: "Unix Timestamp Converter — Epoch to Date and Back | curl2code",
+  title: "Unix Timestamp Converter — Epoch to Date and Back",
   description:
     "Paste a Unix timestamp to find out what date it is, or paste a date to get the timestamp. Seconds, milliseconds and microseconds are detected from the number of digits, and you get UTC, your local time and how long ago it was, all at once.",
   outputLabel: "Conversions",

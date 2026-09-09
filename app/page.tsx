@@ -1,6 +1,21 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ToolCard } from "@/components/ToolCard";
 import { TOOL_COUNT, getTool } from "@/lib/tools";
+import { LANGUAGE_CONTENT } from "@/lib/tools/curl-content";
+
+export const metadata: Metadata = {
+  title: { absolute: "Convert cURL Commands to Code — curl2code" },
+  description:
+    "Paste a cURL command and convert it into JavaScript, Python, Node.js, Go, Java, PHP, C#, Ruby or Axios. Free, instant, and everything runs in your browser.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "Convert cURL Commands to Code",
+    description:
+      "Paste a cURL command and get ready-to-use code in nine languages. Free and browser-based.",
+    url: "/",
+  },
+};
 
 const FEATURED = [
   "curl-to-code",
@@ -17,14 +32,18 @@ export default function Home() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-12">
       <section className="max-w-3xl">
-        <h1 className="text-3xl font-bold sm:text-4xl">
-          Free developer tools that run in your browser
-        </h1>
+        <h1 className="text-3xl font-bold sm:text-4xl">Convert cURL commands to code</h1>
 
         <p className="mt-4 text-dim">
-          {TOOL_COUNT} small tools for working with HTTP APIs: convert a cURL command into code in
-          nine languages, format and compare JSON, decode a JWT, test a regular expression, explain
-          a cron schedule. No accounts, no limits, and nothing you paste is uploaded.
+          Paste the cURL command from an API&rsquo;s documentation and get the same request as
+          working code in JavaScript, Python, Node.js, Go, Java, PHP, C#, Ruby or Axios. Headers,
+          query parameters, JSON and form bodies, auth and file uploads are all converted for you.
+        </p>
+
+        <p className="mt-3 text-dim">
+          Alongside the converter there are {TOOL_COUNT - 1} more tools for working with HTTP APIs:
+          format and compare JSON, decode a JWT, test a regular expression, explain a cron
+          schedule. No accounts, no limits, and nothing you paste is uploaded.
         </p>
 
         <div className="mt-6 flex flex-wrap gap-3">
@@ -41,6 +60,43 @@ export default function Home() {
             Browse all tools
           </Link>
         </div>
+      </section>
+
+      <section className="mt-10">
+        <h2 className="mb-3 text-lg font-semibold">Convert cURL to a specific language</h2>
+        <p className="mb-4 max-w-3xl text-sm text-dim">
+          Each page runs the same converter with that language selected, and explains the details
+          that matter when you run the result &mdash; dependencies, error handling and timeouts.
+        </p>
+        <ul className="flex flex-wrap gap-2">
+          {LANGUAGE_CONTENT.map((language) => (
+            <li key={language.slug}>
+              <Link
+                href={`/tools/${language.slug}`}
+                className="block rounded-full border border-line bg-panel px-3 py-1.5 text-sm text-dim transition-colors hover:border-accent/40 hover:text-fg"
+              >
+                cURL to {language.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="mt-12">
+        <h2 className="mb-4 text-lg font-semibold">How it works</h2>
+        <ol className="grid gap-4 sm:grid-cols-3">
+          {[
+            ["Paste the command", "Copy the cURL example straight out of the API docs, Postman, or your browser's network panel."],
+            ["Pick a language", "Choose one of nine targets. The converter re-runs as you type, so there is nothing to submit."],
+            ["Copy the code", "Take the generated request into your project, or download it as a file."],
+          ].map(([title, body], index) => (
+            <li key={title} className="rounded-xl border border-line bg-panel p-4">
+              <span className="text-xs font-medium text-accent">Step {index + 1}</span>
+              <h3 className="mt-1 font-semibold">{title}</h3>
+              <p className="mt-1 text-sm text-dim">{body}</p>
+            </li>
+          ))}
+        </ol>
       </section>
 
       <section className="mt-12">

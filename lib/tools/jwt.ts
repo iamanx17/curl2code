@@ -70,7 +70,7 @@ export const jwtDecoder: Tool = {
   name: "JWT Decoder",
   category: "Auth",
   summary: "Paste a JWT and read what is inside it — header, claims and expiry.",
-  title: "JWT Decoder — Decode a JSON Web Token Online | curl2code",
+  title: "JWT Decoder — Decode a JSON Web Token Online",
   description:
     "A JWT is three chunks of Base64 separated by dots, which means anyone can read its contents — including you. Paste one here to see the header, every claim in the payload, and the timestamps turned into readable dates. Decoding does not verify the signature, so this tells you what a token says, not whether it can be trusted.",
   outputLabel: "Decoded token",
@@ -163,7 +163,7 @@ export const jwtExpiryChecker: Tool = {
   name: "JWT Expiry Checker",
   category: "Auth",
   summary: "Find out whether a token has expired, and how long it has left.",
-  title: "JWT Expiry Checker — Is My Token Expired? | curl2code",
+  title: "JWT Expiry Checker — Is My Token Expired?",
   description:
     'Getting a 401 and wondering whether the token is the problem? Paste it here. You get a plain answer — valid or expired — along with when it was issued, when it expires and how much time is left, all converted from Unix timestamps into readable dates.',
   outputLabel: "Expiry status",

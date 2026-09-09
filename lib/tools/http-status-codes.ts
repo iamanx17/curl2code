@@ -7,7 +7,7 @@ export const httpStatusCodes: Tool = {
   name: "HTTP Status Codes",
   category: "API",
   summary: "Look up what an HTTP status code means, by number or by keyword.",
-  title: "HTTP Status Codes — Full List With Plain Explanations | curl2code",
+  title: "HTTP Status Codes — Full List With Plain Explanations",
   description:
     "Type a status code to find out what it means and, more usefully, what usually causes it. You can also search by keyword — try 'timeout' or 'rate' — or type 4xx to list a whole class at once. Leave the box empty to browse every code.",
   outputLabel: "Matches",

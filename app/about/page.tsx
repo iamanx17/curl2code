@@ -3,7 +3,7 @@ import Link from "next/link";
 import { TOOL_COUNT } from "@/lib/tools";
 
 export const metadata: Metadata = {
-  title: "About curl2code — Who Builds These Tools and Why",
+  title: "About — Who Builds These Tools and Why",
   description:
     "curl2code is an independent collection of browser-based developer tools for working with HTTP APIs. How it works and why it is free.",
   alternates: { canonical: "/about" },

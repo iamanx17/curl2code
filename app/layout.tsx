@@ -3,16 +3,25 @@ import Script from "next/script";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { GA_ID } from "@/lib/analytics";
+import { websiteSchema } from "@/lib/seo";
 import { SITE } from "@/lib/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
-  title: `${SITE.name} — Free Developer Tools for HTTP APIs`,
+  title: {
+    default: "Convert cURL Commands to Code — curl2code",
+    template: `%s | ${SITE.name}`,
+  },
   description: SITE.description,
   icons: { icon: { url: "/favicon.svg", type: "image/svg+xml" }, apple: "/icon-180.png" },
-  openGraph: { siteName: SITE.name, type: "website", images: ["/og.png"] },
+  openGraph: { siteName: SITE.name, type: "website", images: ["/og.png"], locale: "en_US" },
   twitter: { card: "summary_large_image", images: ["/og.png"] },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
+  },
 };
 
 export const viewport: Viewport = { themeColor: "#0b0d12" };
@@ -24,6 +33,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema()) }}
+        />
 
         {GA_ID && (
           <>

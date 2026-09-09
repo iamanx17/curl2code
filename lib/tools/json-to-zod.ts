@@ -55,7 +55,7 @@ export const jsonToZod: Tool = {
   name: "JSON → Zod",
   category: "JSON",
   summary: "Build a Zod schema from a JSON sample, so the shape is checked at runtime.",
-  title: "JSON to Zod Schema Generator | curl2code",
+  title: "JSON to Zod Schema Generator",
   description:
     "Paste a JSON response and get a Zod schema for it. Unlike a TypeScript type, a Zod schema actually checks the data when your code runs, which is what you want at the edge of your app where an API response arrives. Emails, URLs and ISO dates are recognised and given the matching Zod validator.",
   outputLabel: "Zod schema",

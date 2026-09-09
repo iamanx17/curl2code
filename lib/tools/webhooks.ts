@@ -40,7 +40,7 @@ export const webhookFormatter: Tool = {
   name: "Webhook Payload Formatter",
   category: "Webhooks",
   summary: "Make sense of a webhook payload from your logs, whatever shape it arrived in.",
-  title: "Webhook Payload Formatter — Read Any Webhook Body | curl2code",
+  title: "Webhook Payload Formatter — Read Any Webhook Body",
   description:
     "Webhook bodies turn up in logs as one long line, sometimes JSON, sometimes form-encoded, sometimes JSON that has been encoded as a string. Paste whatever you have and this works out the format, pretty-prints it, and pulls out the event type, ID and timestamp so you can see what the event was.",
   outputLabel: "Formatted payload",
@@ -141,7 +141,7 @@ export const webhookSignature: Tool = {
   name: "Webhook Signature Generator",
   category: "Webhooks",
   summary: "Produce a provider-style signature header so you can test your verification code.",
-  title: "Webhook Signature Generator — Stripe, GitHub, Shopify | curl2code",
+  title: "Webhook Signature Generator — Stripe, GitHub, Shopify",
   description:
     "To test that your webhook endpoint rejects forged requests, you need a correctly signed request to compare against. Paste a payload and your signing secret, choose the provider whose format you are copying, and get the exact header value it would send.",
   outputLabel: "Signature header",
@@ -240,7 +240,7 @@ export const hmacGenerator: Tool = {
   name: "HMAC Generator",
   category: "Webhooks",
   summary: "Compute an HMAC digest of a message with a secret key.",
-  title: "HMAC Generator — SHA-256, SHA-1, SHA-512 Online | curl2code",
+  title: "HMAC Generator — SHA-256, SHA-1, SHA-512 Online",
   description:
     "An HMAC proves that a message came from someone holding the shared secret and has not been changed. Enter a message and a key, pick a hash, and get the digest in both hex and Base64 — the two formats APIs ask for.",
   outputLabel: "Digest",
@@ -303,7 +303,7 @@ export const webhookTester: Tool = {
   name: "Webhook Tester",
   category: "Webhooks",
   summary: "Send a test webhook to your endpoint and see exactly how it replies.",
-  title: "Webhook Tester — Send a Test Webhook Request | curl2code",
+  title: "Webhook Tester — Send a Test Webhook Request",
   description:
     "Send a real HTTP request to your own endpoint without waiting for a provider to fire an event. Set the URL, method, headers and payload, optionally sign it, then press Run and read the status, headers and body that come back. The request goes straight from your browser to the URL you enter.",
   outputLabel: "Response",

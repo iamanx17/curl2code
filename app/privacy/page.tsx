@@ -3,7 +3,7 @@ import Link from "next/link";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | curl2code",
+  title: "Privacy Policy",
   description:
     "What curl2code does with your data: the tools run in your browser and your input is never transmitted. Hosting, analytics and cookies explained.",
   alternates: { canonical: "/privacy" },

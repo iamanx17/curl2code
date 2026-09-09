@@ -4,7 +4,7 @@ import { CATEGORIES } from "@/lib/site";
 import { TOOL_COUNT, toolsByCategory } from "@/lib/tools";
 
 export const metadata: Metadata = {
-  title: `All ${TOOL_COUNT} Developer Tools — cURL, JSON, JWT, HTTP | curl2code`,
+  title: `All ${TOOL_COUNT} Developer Tools — cURL, JSON, JWT, HTTP`,
   description: `A directory of ${TOOL_COUNT} free developer tools: cURL to code conversion, JSON formatting and type generation, JWT decoding, encoding helpers, webhook utilities and more.`,
   alternates: { canonical: "/tools" },
 };

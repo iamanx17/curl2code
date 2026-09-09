@@ -31,7 +31,12 @@ const buttonClass =
   "rounded-lg border border-line bg-panel-2 px-3 py-2 text-sm text-dim transition-colors " +
   "hover:border-accent/50 hover:text-fg active:translate-y-0 hover:-translate-y-px disabled:opacity-50";
 
-export function ToolRunner({ slug }: { slug: string }) {
+/**
+ * `initial` is the example already run on the server. Seeding state with it
+ * means the generated code is in the static HTML rather than appearing only
+ * after hydration, which is what lets crawlers read it.
+ */
+export function ToolRunner({ slug, initial }: { slug: string; initial?: ToolResult }) {
   const tool = getTool(slug)!;
 
   // the example is loaded on arrival so the tool is already doing something
@@ -43,7 +48,7 @@ export function ToolRunner({ slug }: { slug: string }) {
     result: ToolResult | null;
     error: string | null;
     stamp: number;
-  }>({ result: null, error: null, stamp: 0 });
+  }>({ result: initial ?? null, error: null, stamp: 0 });
 
   const [toast, setToast] = useState<string | null>(null);
 
@@ -76,8 +81,17 @@ export function ToolRunner({ slug }: { slug: string }) {
     track("tool_opened", { tool: tool.slug });
   }, [tool.slug]);
 
+  // the server already ran the untouched example, so re-running it on mount
+  // would only replace the output with an identical value and flash the panel
+  const skipFirstRun = useRef(!!initial);
+
   useEffect(() => {
     if (tool.manual) return;
+
+    if (skipFirstRun.current) {
+      skipFirstRun.current = false;
+      return;
+    }
 
     const timer = setTimeout(() => run(values), 150);
     return () => clearTimeout(timer);

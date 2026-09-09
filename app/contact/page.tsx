@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Contact — Report a Bug or Suggest a Tool | curl2code",
+  title: "Contact — Report a Bug or Suggest a Tool",
   description:
     "Get in touch about a conversion bug, a tool suggestion, or a privacy question. Email reaches the developer who maintains curl2code.",
   alternates: { canonical: "/contact" },

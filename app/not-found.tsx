@@ -1,4 +1,8 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+// Next already marks the not-found page noindex; this only names it
+export const metadata: Metadata = { title: "Page not found" };
 
 export default function NotFound() {
   return (
