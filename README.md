@@ -1,5 +1,6 @@
-# curl2code
+# Curl2Code
 
+<<<<<<< HEAD
 Free, browser-based developer tools for working with HTTP APIs. 28 tools across 38 pages:
 convert a cURL command into code in ten languages, format and compare JSON, decode a JWT,
 test a regular expression, explain a cron schedule.
@@ -37,9 +38,21 @@ from your own machine.
 
 For host development instead of Docker, start your own Redis, copy `.env.example` to `.env.local`,
 set `REDIS_URL`, then run `npm install` and `npm run dev`. Use Node.js 22 or newer.
+=======
+> Free developer tools for working with cURL, HTTP APIs, JSON, webhooks, and more.
 
-## Layout
+🌐 **[Try Curl2Code](https://curl2code.xyz)**
 
+Curl2Code is a collection of fast, browser-based developer tools built for developers working with APIs and web requests.
+
+The main tool converts **cURL commands into ready-to-use code** for JavaScript, TypeScript, Python, Node.js, Axios, Go, Java, PHP, C#, and Ruby.
+
+**Nothing you paste is uploaded or stored.** Tools run in your browser. The exception is the Webhook Tester, whose purpose is to send a request.
+>>>>>>> 21969763dd23bccde1aacf59875f738482a9b48e
+
+---
+
+<<<<<<< HEAD
 ```
 app/                     routes — one file per page
   tools/[slug]/page.tsx  every tool page comes from here
@@ -54,52 +67,65 @@ lib/
   site.ts                name, URL, navigation
   seo.ts                 JSON-LD
 ```
+=======
+## 🚀 What can you do with Curl2Code?
+>>>>>>> 21969763dd23bccde1aacf59875f738482a9b48e
 
-## How a tool works
+### cURL & HTTP
 
-A tool is one object in `lib/tools/`. It carries its own metadata, its input fields, the
-function that produces output, and the written content for its page:
+- **cURL to Code** — Convert cURL commands into code
+- **cURL to JavaScript**
+- **cURL to TypeScript**
+- **cURL to Python**
+- **cURL to Node.js**
+- **cURL to Axios**
+- **cURL to Go**
+- **cURL to Java**
+- **cURL to PHP**
+- **cURL to C#**
+- **cURL to Ruby**
+- HTTP Request Builder
+- HTTP Header Parser
+- HTTP Response Formatter
+- HTTP Status Codes
+- URL Parser
+- Query String Parser
 
-```ts
-export const myTool: Tool = {
-  slug: "my-tool",
-  name: "My Tool",
-  category: "Utilities",
-  summary: "One line for the card and the meta description.",
-  title: "My Tool — … | curl2code",
-  description: "The paragraph under the heading. Written for someone who has not used it.",
-  inputs: [{ key: "input", label: "Text", type: "textarea" }],
-  run: (values) => text(str(values, "input").toUpperCase()),
-  docs: [{ heading: "How to use it", html: "<p>…</p>" }],
-  faqs: [{ q: "…", a: "…" }],
-};
-```
+### JSON
 
-Add it to the array in `lib/tools/index.ts` and the page, the directory listing, the sitemap
-and the related-tools block all follow. There is no separate registration step.
+- JSON Formatter
+- JSON Validator
+- JSON Diff
+- JSON to TypeScript
+- JSON to Zod
+- JSON to Pydantic
 
-`run()` returns data, never markup:
+### Webhooks & Security
 
-- `text(value, notes?)` — a block of code or plain output, with optional warnings
-- `blocks([...], copy?)` — headings, tables, lists and code, plus what the copy button takes
-- `empty(message)` — nothing to do yet, such as an empty input
+- Webhook Tester
+- Webhook Payload Formatter
+- Webhook Signature Generator
+- HMAC Generator
+- JWT Decoder
+- JWT Expiry Checker
+- Basic Auth Generator
 
-`Output.tsx` decides how each block is drawn, so no tool escapes anything and React handles
-it. Anything a tool throws is shown as an error message, which is why those messages are
-written for a person: what went wrong and what to do about it.
+### Other Developer Utilities
 
-Input types are `text`, `textarea`, `select` and `checkbox`. Set `manual: true` if the tool
-should only run when asked — the webhook tester uses it, because it sends a real request.
-Set `download` to a filename, or a function of the values, to get a download button.
+- Base64 Encoder / Decoder
+- URL Encoder / Decoder
+- UUID Generator
+- Regex Tester
+- Timestamp Converter
+- Cron Expression Generator
 
-## Analytics
+Explore all available tools:
 
-Off unless `NEXT_PUBLIC_GA_ID` is set. Events carry the tool's slug and nothing else:
-`tool_opened`, `copy_clicked`, `download_clicked`, `example_loaded`. No field contents are
-ever sent — see `lib/analytics.ts`.
+👉 **[Browse Curl2Code Tools](https://curl2code.xyz/tools)**
 
-## Notes
+---
 
+<<<<<<< HEAD
 - `NEXT_PUBLIC_SITE_URL` sets canonical URLs and the sitemap. It defaults to the production
   domain, so set it when running anywhere else.
 - Tool pages are prerendered at build time. Webhook Inspector requires the Node/Next.js runtime
@@ -157,3 +183,18 @@ The suite uses isolated key prefixes and never flushes Redis. Without `TEST_REDI
 integration tests are explicitly skipped. The suite also checks all tool example outputs and
 page rendering, both PowerShell dropdowns, session reuse across tabs/reloads, real webhook capture,
 TTL expiry, body limits, metadata, sitemap entries and mobile overflow.
+=======
+## ⚡ cURL to Code
+
+Paste a cURL command and instantly generate equivalent code.
+
+### Example
+
+**Input**
+
+```bash
+curl -X POST https://api.example.com/users \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer TOKEN" \
+  -d '{"name":"Aman"}'
+>>>>>>> 21969763dd23bccde1aacf59875f738482a9b48e
