@@ -17,7 +17,12 @@ export async function POST(request: Request) {
   const origin = request.headers.get("origin");
   const requestUrl = new URL(request.url);
   // Next.js can use its internal hostname in request.url; Host is the browser-facing host.
-  requestUrl.host = request.headers.get("host") || requestUrl.host;
+  const host = request.headers.get("host");
+  if (host) {
+    // Assigning a hostname alone does not clear the URL's internal port.
+    requestUrl.port = "";
+    requestUrl.host = host;
+  }
   let sameHost = !origin;
   try { if (origin) sameHost = new URL(origin).host === requestUrl.host; } catch { /* Invalid origin. */ }
   if (!sameHost || request.headers.get("sec-fetch-site") === "cross-site" || !request.headers.get("content-type")?.startsWith("application/json")) {
