@@ -22,6 +22,10 @@ export function Footer() {
         <p>
           © {new Date().getFullYear()} {SITE.name}
         </p>
+
+        <p className="text-center text-dim">
+          Made with <span role="img" aria-label="love">❤️</span> in India
+        </p>
       </div>
     </footer>
   );
