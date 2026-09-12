@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { LANGUAGE_CONTENT } from "@/lib/tools/curl-content";
 
-/** Links between the converter and its nine per-language pages. */
+/** Links between the converter and its ten per-language pages. */
 export function CurlLanguages({ slug }: { slug: string }) {
   return (
     <nav aria-label="Target languages" className="mb-6 flex flex-wrap items-center gap-2 text-sm">

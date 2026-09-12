@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { CurlLanguages } from "@/components/CurlLanguages";
 import { ToolCard } from "@/components/ToolCard";
 import { ToolRunner } from "@/components/ToolRunner";
+import { WebhookInspector } from "@/components/WebhookInspector";
 import { TOOLS, getTool, relatedTools } from "@/lib/tools";
 import { breadcrumbSchema, faqSchema, softwareSchema } from "@/lib/seo";
 import type { Tool, ToolResult } from "@/lib/tools/types";
@@ -22,7 +23,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: tool.title,
     description: tool.summary,
     alternates: { canonical: `/tools/${tool.slug}` },
-    openGraph: { title: tool.title, description: tool.summary, url: `/tools/${tool.slug}` },
+    openGraph: { title: tool.title, description: tool.summary, url: `/tools/${tool.slug}`, images: ["/og.png"] },
+    twitter: { card: "summary_large_image", title: tool.title, description: tool.summary, images: ["/og.png"] },
   };
 }
 
@@ -64,9 +66,9 @@ export default async function ToolPage({ params }: Props) {
         <p className="mt-3 text-dim">{tool.description}</p>
       </header>
 
-      {tool.category === "cURL" && <CurlLanguages slug={tool.slug} />}
+      {tool.category === "cURL" && tool.slug !== "powershell-to-code" && <CurlLanguages slug={tool.slug} />}
 
-      <ToolRunner slug={tool.slug} initial={initial} />
+      {tool.slug === "webhook-inspector" ? <WebhookInspector /> : <ToolRunner key={tool.slug} slug={tool.slug} initial={initial} />}
 
       {tool.docs?.length ? (
         <div className="prose mt-12 max-w-3xl">

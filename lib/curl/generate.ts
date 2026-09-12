@@ -552,6 +552,37 @@ export function ruby(request: Request) {
   return lines.join("\n");
 }
 
+const psQuote = (value: string) => "'" + value.replace(/'/g, "''") + "'";
+
+function powershell(request: Request) {
+  const lines = ["# PowerShell 7+", "$request = @{", `  Uri = ${psQuote(request.url)}`, `  Method = ${psQuote(request.method)}`,
+    `  MaximumRedirection = ${request.followRedirects ? 10 : 0}`, "  SkipHttpErrorCheck = $true"];
+  if (request.insecure) lines.push("  SkipCertificateCheck = $true");
+  const headers = Object.entries(request.headers).filter(([name]) => name.toLowerCase() !== "content-type");
+  if (headers.length) {
+    lines.push("  Headers = @{");
+    for (const [name, value] of headers) lines.push(`    ${psQuote(name)} = ${psQuote(value)}`);
+    lines.push("  }");
+  }
+  if (request.body?.kind === "multipart") {
+    lines.push("  Form = @{");
+    const fields = new Map<string, string[]>();
+    for (const part of request.body.parts) {
+      const values = fields.get(part.name) ?? [];
+      values.push(part.isFile ? `(Get-Item -LiteralPath ${psQuote(part.value)})` : psQuote(part.value));
+      fields.set(part.name, values);
+    }
+    for (const [name, values] of fields) lines.push(`    ${psQuote(name)} = ${values.length === 1 ? values[0] : `@(${values.join(", ")})`}`);
+    lines.push("  }");
+  } else {
+    const contentType = headerValue(request.headers, "content-type") || (request.body?.kind === "json" ? "application/json" : "");
+    if (contentType) lines.push(`  ContentType = ${psQuote(contentType)}`);
+    if (request.body) lines.push(`  Body = [System.Text.Encoding]::UTF8.GetBytes(${psQuote(request.body.raw)})`);
+  }
+  lines.push("}", "", "$response = Invoke-WebRequest @request", "$response.StatusCode", "$response.Content");
+  return lines.join("\n");
+}
+
 export const LANGUAGES = [
   { id: "javascript", label: "JavaScript (fetch)", ext: "js", generate: fetchJs },
   { id: "node", label: "Node.js (fetch)", ext: "mjs", generate: nodeJs },
@@ -562,4 +593,5 @@ export const LANGUAGES = [
   { id: "php", label: "PHP (cURL)", ext: "php", generate: phpCurl },
   { id: "csharp", label: "C# (HttpClient)", ext: "cs", generate: csharp },
   { id: "ruby", label: "Ruby (Net::HTTP)", ext: "rb", generate: ruby },
+  { id: "powershell", label: "PowerShell (Invoke-WebRequest)", ext: "ps1", generate: powershell },
 ] as const;

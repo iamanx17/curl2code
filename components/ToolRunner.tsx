@@ -185,7 +185,7 @@ export function ToolRunner({ slug, initial }: { slug: string; initial?: ToolResu
           </div>
         </section>
 
-        <section className="rise rounded-xl border border-line bg-panel p-4 [animation-delay:60ms]">
+        <section className="rise min-w-0 rounded-xl border border-line bg-panel p-4 [animation-delay:60ms]">
           <div className="mb-3 flex items-center justify-between">
             <h2 className="text-sm font-semibold">{tool.outputLabel ?? "Output"}</h2>
             <button type="button" onClick={copy} className="text-xs text-accent hover:underline">

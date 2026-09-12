@@ -309,14 +309,14 @@ export const webhookTester: Tool = {
   outputLabel: "Response",
   manual: true,
   example: {
-    url: "https://webhook.site/your-unique-id",
+    url: "https://example.com/your-webhook",
     method: "POST",
     headers: "Content-Type: application/json",
     payload: EXAMPLE,
     secret: "",
   },
   inputs: [
-    { key: "url", label: "Target URL", type: "text", placeholder: "https://webhook.site/..." },
+    { key: "url", label: "Target URL", type: "text", placeholder: "https://example.com/webhook" },
     {
       key: "method",
       label: "Method",
@@ -397,8 +397,8 @@ export const webhookTester: Tool = {
   },
   docs: [
     {
-      heading: "This is the one tool that sends data",
-      html: `<p>Every other tool on this site works entirely offline. This one exists to make a request, so it does: your browser sends it directly to the URL you type. It does not pass through this site, and nothing is stored here — but the URL you enter will receive whatever you put in the payload, so point it at your own endpoint.</p>`,
+      heading: "This tool sends data",
+      html: `<p>This tool sends a real request: your browser sends it directly to the URL you type. It does not pass through this site, and nothing is stored here — but the URL you enter will receive whatever you put in the payload, so point it at your own endpoint.</p>`,
     },
     {
       heading: "About CORS",
@@ -407,7 +407,7 @@ export const webhookTester: Tool = {
     },
     {
       heading: "Testing without an endpoint yet",
-      html: `<p>Services such as webhook.site give you a throwaway URL that accepts anything and shows you what arrived. They are useful for checking what a provider actually sends before you write the handler. Do not send real customer data to them.</p>`,
+      html: `<p>Open the <a href="/tools/webhook-inspector">Webhook Inspector</a> to get your browser’s capture URL automatically, then paste that URL here. Send test data and inspect what arrived in the inspector tab.</p>`,
     },
   ],
   faqs: [

@@ -23,15 +23,16 @@ export default function About() {
 
       <h2>How it works</h2>
       <p>
-        Every tool runs as JavaScript in your browser. There is no queue and no database, and
+        Converters and formatters run as JavaScript in your browser. There is no queue and no database, and
         nothing you paste is stored. When you paste a command containing a bearer token, that token
-        is parsed by code running on your own machine. The one exception is the{" "}
+        is parsed by code running on your own machine. The{" "}
         <Link href="/tools/webhook-tester">webhook tester</Link>, which exists to send a request —
         and it sends it directly from your browser to the URL you type, not through this site.
       </p>
       <p>
-        A side effect of that design is that the tools keep working with the network off, and that
-        pages load in a few kilobytes.
+        The webhook inspector captures requests on our own backend and stores them temporarily
+        in Redis with a one-hour TTL. Local converters and formatters can work without a network connection
+        after loading.
       </p>
 
       <h2>Why it is free</h2>

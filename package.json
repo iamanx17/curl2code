@@ -6,14 +6,20 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "tsc --noEmit"
+    "lint": "tsc --noEmit",
+    "test": "playwright test"
   },
   "dependencies": {
-    "next": "15.5.4",
+    "next": "15.5.25",
     "react": "19.1.1",
-    "react-dom": "19.1.1"
+    "react-dom": "19.1.1",
+    "redis": "6.2.1"
+  },
+  "overrides": {
+    "next": { "postcss": "8.5.28" }
   },
   "devDependencies": {
+    "@playwright/test": "^1.63.0",
     "@tailwindcss/postcss": "4.1.13",
     "@types/node": "24.5.2",
     "@types/react": "19.1.13",

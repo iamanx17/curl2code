@@ -11,7 +11,7 @@ export function Header() {
         Skip to content
       </a>
 
-      <div className="mx-auto flex max-w-6xl items-center gap-6 px-4 py-3">
+      <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-3 px-4 py-3">
         <Link href="/" className="flex items-center gap-2.5 font-semibold">
           <span className="grid size-7 place-items-center rounded-[7px] bg-linear-135 from-accent to-accent-2 font-mono text-xs font-bold text-white">
             c2
@@ -21,7 +21,7 @@ export function Header() {
           </span>
         </Link>
 
-        <nav className="ml-auto flex items-center gap-1 text-sm">
+        <nav className="flex w-full flex-wrap items-center gap-1 text-sm md:ml-auto md:w-auto">
           {NAV.map((item) => (
             <Link
               key={item.href}

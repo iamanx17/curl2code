@@ -25,8 +25,8 @@ export default function ToolsIndex() {
       <header className="max-w-2xl">
         <h1 className="text-3xl font-bold">All developer tools</h1>
         <p className="mt-3 text-dim">
-          {TOOL_COUNT} tools for working with HTTP APIs. Each one runs in your browser, with no
-          account and no limit. The cURL converter has a page for every target language.
+          {TOOL_COUNT} tools for working with HTTP APIs. Converters run locally without an account.
+          Webhook capture runs on our backend with automatic expiry. The cURL converter has a page for every target language.
         </p>
       </header>
 

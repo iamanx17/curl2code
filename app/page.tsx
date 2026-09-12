@@ -7,23 +7,23 @@ import { LANGUAGE_CONTENT } from "@/lib/tools/curl-content";
 export const metadata: Metadata = {
   title: { absolute: "Convert cURL Commands to Code — curl2code" },
   description:
-    "Paste a cURL command and convert it into JavaScript, Python, Node.js, Go, Java, PHP, C#, Ruby or Axios. Free, instant, and everything runs in your browser.",
+    "Paste a cURL command and convert it into JavaScript, Python, Node.js, Go, Java, PHP, C#, Ruby, Axios or PowerShell. Free, instant, and everything runs in your browser.",
   alternates: { canonical: "/" },
   openGraph: {
     title: "Convert cURL Commands to Code",
     description:
-      "Paste a cURL command and get ready-to-use code in nine languages. Free and browser-based.",
+      "Paste a cURL command and get ready-to-use code in ten languages. Free and browser-based.",
     url: "/",
   },
 };
 
 const FEATURED = [
   "curl-to-code",
+  "powershell-to-code",
+  "webhook-inspector",
   "json-formatter",
   "jwt-decoder",
   "json-to-typescript",
-  "regex-tester",
-  "cron-expression-generator",
 ];
 
 export default function Home() {
@@ -36,14 +36,14 @@ export default function Home() {
 
         <p className="mt-4 text-dim">
           Paste the cURL command from an API&rsquo;s documentation and get the same request as
-          working code in JavaScript, Python, Node.js, Go, Java, PHP, C#, Ruby or Axios. Headers,
+          working code in JavaScript, Python, Node.js, Go, Java, PHP, C#, Ruby, Axios or PowerShell. Headers,
           query parameters, JSON and form bodies, auth and file uploads are all converted for you.
         </p>
 
         <p className="mt-3 text-dim">
           Alongside the converter there are {TOOL_COUNT - 1} more tools for working with HTTP APIs:
           format and compare JSON, decode a JWT, test a regular expression, explain a cron
-          schedule. No accounts, no limits, and nothing you paste is uploaded.
+          schedule. Converters run locally; webhook capture uses temporary curl2code URLs.
         </p>
 
         <div className="mt-6 flex flex-wrap gap-3">
@@ -87,7 +87,7 @@ export default function Home() {
         <ol className="grid gap-4 sm:grid-cols-3">
           {[
             ["Paste the command", "Copy the cURL example straight out of the API docs, Postman, or your browser's network panel."],
-            ["Pick a language", "Choose one of nine targets. The converter re-runs as you type, so there is nothing to submit."],
+            ["Pick a language", "Choose one of ten targets. The converter re-runs as you type, so there is nothing to submit."],
             ["Copy the code", "Take the generated request into your project, or download it as a file."],
           ].map(([title, body], index) => (
             <li key={title} className="rounded-xl border border-line bg-panel p-4">
@@ -131,8 +131,7 @@ export default function Home() {
         <div>
           <h2 className="mb-2 font-semibold">Pasting a token somewhere should not be a risk.</h2>
           <p className="text-sm text-dim">
-            Most online converters send your input to a server. Here every tool is JavaScript
-            running in your tab, so the command, the token and the payload stay on your machine.
+            Most online converters send your input to a server. Here converters and formatters run in your tab, so pasted commands and tokens stay on your machine. Webhook capture uses our backend with temporary storage.
             Open your network panel and check.
           </p>
         </div>

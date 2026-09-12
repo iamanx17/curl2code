@@ -2,13 +2,15 @@ export const SITE = {
   name: "curl2code",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://curl2code.xyz",
   description:
-    "Free developer tools that run in your browser: convert cURL to code, format JSON, decode JWTs, test regular expressions and more. Nothing you paste is uploaded.",
+    "Free developer tools that run in your browser: convert cURL to code, format JSON, decode JWTs, test regular expressions and more. Converters process input locally; webhook capture runs on our own backend.",
   email: "hello@curl2code.xyz",
 };
 
 export const NAV = [
   { href: "/tools", label: "Tools" },
   { href: "/tools/curl-to-code", label: "cURL → Code" },
+  { href: "/tools/powershell-to-code", label: "PowerShell → Code" },
+  { href: "/tools/webhook-inspector", label: "Webhook Inspector" },
   { href: "/about", label: "About" },
 ];
 

@@ -1,4 +1,6 @@
 import { Tool } from "./types";
+import { powershellToCode } from "./powershell-to-code";
+import { webhookInspector } from "./webhook-inspector";
 import { curlLanguageTools, curlToCode } from "./curl-to-code";
 import { jsonFormatter } from "./json-formatter";
 import { jsonValidator } from "./json-validator";
@@ -16,6 +18,8 @@ import { cronBuilder } from "./cron-builder";
 
 export const TOOLS: Tool[] = [
   curlToCode,
+  powershellToCode,
+  webhookInspector,
   ...curlLanguageTools,
 
   jsonFormatter,
@@ -55,7 +59,7 @@ export const toolsByCategory = (category: string) =>
   TOOLS.filter((tool) => tool.category === category);
 
 /**
- * The nine cURL language pages host the same converter, so counting slugs would
+ * The ten cURL language pages host the same converter, so counting slugs would
  * overstate how many distinct tools there are.
  */
 export const TOOL_COUNT = TOOLS.length - curlLanguageTools.length;

@@ -13,6 +13,16 @@ export type LanguageContent = {
 
 export const LANGUAGE_CONTENT: LanguageContent[] = [
   {
+    slug: "curl-to-powershell",
+    lang: "powershell",
+    name: "PowerShell",
+    summary: "Convert cURL to PowerShell Invoke-WebRequest with headers, JSON, authentication and file uploads.",
+    title: "cURL to PowerShell Converter — Invoke-WebRequest Online",
+    description: "Convert cURL commands into PowerShell 7 scripts for Invoke-WebRequest. Generate headers, JSON bodies, cookies and multipart requests locally in your browser.",
+    intro: "Paste a cURL request and generate a PowerShell 7 script using <code>Invoke-WebRequest</code>. Copy the script or download a <code>.ps1</code> file. Headers, authentication and JSON bodies are preserved.",
+    notes: "<p>Run the generated script in PowerShell 7 or newer with <code>pwsh ./request.ps1</code>. JSON and form bodies use UTF-8 bytes. Multipart files use <code>Get-Item</code>; update the file paths before running. PowerShell selects the MIME type for uploaded files.</p><p>The script prints the response status and body, including HTTP error responses. Redirects follow the original cURL flags. For cURL commands copied with PowerShell quoting, use <a href=\"/tools/powershell-to-code\">PowerShell to Code</a> instead of this page.</p>",
+  },
+  {
     slug: "curl-to-javascript",
     lang: "javascript",
     name: "JavaScript",

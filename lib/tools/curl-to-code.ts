@@ -51,10 +51,10 @@ export const curlToCode: Tool = {
   slug: "curl-to-code",
   name: "cURL → Code Converter",
   category: "cURL",
-  summary: "Paste a cURL command and get the same request as working code in nine languages.",
-  title: "cURL to Code Converter — 9 Languages",
+  summary: "Paste a cURL command and get the same request as working code in ten languages.",
+  title: "cURL to Code Converter — 10 Languages",
   description:
-    "Every API's documentation shows you a cURL command, but your project is not written in cURL. Paste the command here and get the same request as runnable code in JavaScript, Python, Go, Java, PHP, C#, Ruby, Node.js or Axios. Headers, query parameters, JSON and form bodies, basic and bearer auth and file uploads are all converted for you.",
+    "Every API's documentation shows you a cURL command, but your project is not written in cURL. Paste the command here and get the same request as runnable code in JavaScript, Python, Go, Java, PHP, C#, Ruby, Node.js, Axios or PowerShell. Headers, query parameters, JSON and form bodies, basic and bearer auth and file uploads are all converted for you.",
   outputLabel: "Generated code",
   example: { curl: EXAMPLE, lang: "python" },
   inputs: inputs("javascript"),

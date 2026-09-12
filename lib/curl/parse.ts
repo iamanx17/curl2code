@@ -147,7 +147,12 @@ export function parseCurl(input: string): Request {
   const line = normalize(input);
   if (!line) throw new Error("Paste a cURL command first.");
 
-  const tokens = tokenize(line);
+  return parseCurlTokens(tokenize(line));
+}
+
+/** Shell-specific tokenizers share all HTTP option parsing and generators. */
+export function parseCurlTokens(args: string[]): Request {
+  const tokens = [...args];
 
   if (!/^curl(\.exe)?$/i.test(tokens[0] ?? "")) {
     throw new Error(
@@ -268,7 +273,7 @@ export function parseCurl(input: string): Request {
     ) {
       const value = valueAfter(i++, token);
 
-      if (value.startsWith("@") && token !== "--data-urlencode") {
+      if (value.startsWith("@") && token !== "--data-urlencode" && token !== "--data-raw") {
         warnings.push(
           `Ignored ${token} ${value} — the body came from a file. Paste the file contents instead.`,
         );

@@ -14,9 +14,9 @@ export function Footer() {
         </nav>
 
         <p className="max-w-2xl">
-          Every tool here runs in your browser. Commands, tokens and payloads you paste are not
-          uploaded. The one exception is the webhook tester, which sends a request because that is
-          its purpose.
+          Converters and formatters process input locally. The webhook tester sends requests to your
+          chosen URL. The webhook inspector captures requests on our backend and stores them temporarily
+          in Redis with automatic expiry. See our privacy policy for details.
         </p>
 
         <p>

@@ -4,3 +4,11 @@
 .next/
 next-env.d.ts
 node_modules/
+test-results/
+playwright-report/
+
+.env
+
+# Local scenario tests
+tests/
+playwright.config.ts
